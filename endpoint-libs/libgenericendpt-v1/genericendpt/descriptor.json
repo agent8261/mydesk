@@ -1,12 +1,12 @@
 {
   "files": [
     {
-      "path": "mydeskbackend-api-mydeskbackend-v1-rev20121001213619-1.8.0-beta-sources.jar", 
+      "path": "mydeskbackend-api-genericendpt-v1-rev20121025183610-1.8.0-beta-sources.jar", 
       "type": "source"
     }
   ], 
   "kind": "discovery#directoryItem", 
-  "name": "mydeskbackend", 
+  "name": "genericendpt", 
   "language": "java", 
   "proguard-config": "proguard-google-api-client.txt", 
   "version": "v1", 
@@ -747,6 +747,6 @@
     }
   ], 
   "language_version": "1.8.0-beta", 
-  "id": "mydeskbackend:v1", 
-  "revision": 20121001213619
+  "id": "genericendpt:v1", 
+  "revision": 20121025183610
 }

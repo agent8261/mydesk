@@ -11,18 +11,18 @@
  */
 /*
  * This file was generated.
- *  with google-apis-code-generator 1.2.0 (build: 2012-09-27 15:13:35 UTC)
- *  on 2012-10-01 at 21:36:19 UTC 
+ *  with google-apis-code-generator 1.2.0 (build: 2012-10-03 02:48:15 UTC)
+ *  on 2012-10-25 at 18:36:10 UTC 
  */
 
-package com.appspot.api.services.mydeskbackend;
+package com.appspot.api.services.genericendpt;
 
 /**
  * Available OAuth 2.0 scopes for use with the .
  *
  * @since 1.4
  */
-public class MydeskbackendScopes {
+public class GenericendptScopes {
 
-  private MydeskbackendScopes() {}
+  private GenericendptScopes() {}
 }

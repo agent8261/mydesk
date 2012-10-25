@@ -11,32 +11,32 @@
  */
 /*
  * This file was generated.
- *  with google-apis-code-generator 1.2.0 (build: 2012-09-27 15:13:35 UTC)
- *  on 2012-10-01 at 21:36:19 UTC 
+ *  with google-apis-code-generator 1.2.0 (build: 2012-10-03 02:48:15 UTC)
+ *  on 2012-10-25 at 18:36:10 UTC 
  */
 
-package com.appspot.api.services.mydeskbackend;
+package com.appspot.api.services.genericendpt;
 
 import com.google.api.client.http.HttpMethod;
 import com.google.api.client.http.json.JsonHttpClient;
 import com.google.api.client.http.json.JsonHttpRequest;
 
 /**
- * Generated Mydeskbackend request.
+ * Generated Genericendpt request.
  *
  * @since 1.3.0
  */
-public class MydeskbackendRequest extends JsonHttpRequest {
+public class GenericendptRequest extends JsonHttpRequest {
 
   /**
-   * Builds an instance of MydeskbackendRequest.
+   * Builds an instance of GenericendptRequest.
    *
    * @param client The JSON HTTP client which handles this request
    * @param method HTTP Method type
    * @param uriTemplate URI template
    * @param content A POJO that can be serialized into JSON or {@code null} for none
    */
-  public MydeskbackendRequest(
+  public GenericendptRequest(
       JsonHttpClient client, HttpMethod method, String uriTemplate, Object content) {
     super(client, method, uriTemplate, content);
   }
@@ -53,7 +53,7 @@ public class MydeskbackendRequest extends JsonHttpRequest {
   }
 
   /** Returns response with indentations and line breaks. */
-  public MydeskbackendRequest setPrettyPrint(Boolean prettyPrint) {
+  public GenericendptRequest setPrettyPrint(Boolean prettyPrint) {
     this.prettyPrint = prettyPrint;
     return this;
   }
@@ -70,7 +70,7 @@ public class MydeskbackendRequest extends JsonHttpRequest {
   }
 
   /** Selector specifying which fields to include in a partial response. */
-  public MydeskbackendRequest setFields(String fields) {
+  public GenericendptRequest setFields(String fields) {
     this.fields = fields;
     return this;
   }
@@ -94,7 +94,7 @@ public class MydeskbackendRequest extends JsonHttpRequest {
  * Available to use for quota purposes for server-side applications. Can be any arbitrary string
  * assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.
  */
-  public MydeskbackendRequest setQuotaUser(String quotaUser) {
+  public GenericendptRequest setQuotaUser(String quotaUser) {
     this.quotaUser = quotaUser;
     return this;
   }
@@ -111,7 +111,7 @@ public class MydeskbackendRequest extends JsonHttpRequest {
   }
 
   /** OAuth 2.0 token for the current user. */
-  public MydeskbackendRequest setOauthToken(String oauthToken) {
+  public GenericendptRequest setOauthToken(String oauthToken) {
     this.oauthToken = oauthToken;
     return this;
   }
@@ -135,7 +135,7 @@ public class MydeskbackendRequest extends JsonHttpRequest {
  * API key. Your API key identifies your project and provides you with API access, quota, and
  * reports. Required unless you provide an OAuth 2.0 token.
  */
-  public MydeskbackendRequest setKey(String key) {
+  public GenericendptRequest setKey(String key) {
     this.key = key;
     return this;
   }
@@ -159,7 +159,7 @@ public class MydeskbackendRequest extends JsonHttpRequest {
  * IP address of the site where the request originates. Use this if you want to enforce per-user
  * limits.
  */
-  public MydeskbackendRequest setUserIp(String userIp) {
+  public GenericendptRequest setUserIp(String userIp) {
     this.userIp = userIp;
     return this;
   }
@@ -176,7 +176,7 @@ public class MydeskbackendRequest extends JsonHttpRequest {
   }
 
   /** Data format for the response. */
-  public MydeskbackendRequest setAlt(String alt) {
+  public GenericendptRequest setAlt(String alt) {
     this.alt = alt;
     return this;
   }

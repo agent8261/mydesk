@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "path": "mydeskbackend-api-deviceinfoendpoint-v1-rev20121001213614-1.8.0-beta-sources.jar", 
+      "path": "mydeskbackend-api-deviceinfoendpoint-v1-rev20121025183602-1.8.0-beta-sources.jar", 
       "type": "source"
     }
   ], 
@@ -748,5 +748,5 @@
   ], 
   "language_version": "1.8.0-beta", 
   "id": "deviceinfoendpoint:v1", 
-  "revision": 20121001213614
+  "revision": 20121025183602
 }

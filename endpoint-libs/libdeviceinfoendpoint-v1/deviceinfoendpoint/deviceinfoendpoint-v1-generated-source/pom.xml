@@ -8,8 +8,8 @@
 
   <groupId>com.google.apis</groupId>
   <artifactId>google-api-services-deviceinfoendpoint</artifactId>
-  <version>v1-rev20121001213614-1.8.0-beta</version>
-  <name> v1 (revision 20121001213614)</name>
+  <version>v1-rev20121025183602-1.8.0-beta</version>
+  <name> v1 (revision 20121025183602)</name>
   <packaging>jar</packaging>
 
   <inceptionYear>2011</inceptionYear>

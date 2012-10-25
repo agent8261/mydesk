@@ -1,32 +1,31 @@
 package com.mydesk;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
-import com.appspot.api.services.mydeskbackend.Mydeskbackend;
-import com.appspot.api.services.mydeskbackend.Mydeskbackend.Builder;
-import com.appspot.api.services.mydeskbackend.model.Lexicon;
+import com.appspot.api.services.genericendpt.Genericendpt;
+import com.appspot.api.services.genericendpt.model.GenericBuffer;
+import com.appspot.api.services.genericendpt.Genericendpt.Builder;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.mydesk.ProtocolBufferTransport.DummyMessage;
+import com.mydesk.ProtocolBufferTransport.GenericTransport;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-//import org.codehaus.jackson.JsonParser;
-
 public class MainActivity extends Activity 
 {
 	private String viewText = "You Have to click the button";
-	private String localurl;
 	
 	@Override
   public boolean onCreateOptionsMenu(Menu menu) 
@@ -44,7 +43,7 @@ public class MainActivity extends Activity
     //Creating Button variable
     Button button = (Button) findViewById(R.id.bt);           
     //Adding Listener to button
-     button.setOnClickListener(new buttonClickHandler());
+    button.setOnClickListener(new buttonClickHandler());
 
   }
   //=========================================================================    
@@ -84,22 +83,55 @@ public class MainActivity extends Activity
 		{
 			try 
 			{
-				// Build Endpoint
-				Builder endpointBuilder = new Mydeskbackend.Builder(
+				// Build End-point
+				Builder endpointBuilder = new Genericendpt.Builder(
 							AndroidHttp.newCompatibleTransport(),
 							new JacksonFactory(),
 							new ReqIntializer());
 					  
-				Mydeskbackend endpoint = 
+				Genericendpt endpoint = 
 						 CloudEndpointUtils.updateBuilder(endpointBuilder).build();
-				// Call getLexicoin
-				Lexicon result = endpoint.getLexicon("hello").execute();
-				// Return result of function call
-				return result.toString();
+				
+				// Execute the end-point function
+				GenericBuffer result = endpoint.getTest().execute();
+				System.out.println(result.toString());
+				System.out.println(result.getKey());
+				System.out.println(result.getMsg());
+				/*				
+        URL-safe mode: Default off.
+        Line length: Default 76.
+        Line separator: Default is CRLF ("\r\n")
+				 */
+				// Construct string decoder
+				byte[] data = Base64.decode(result.getMsg(), Base64.URL_SAFE);
+				assert(data != null);
+				GenericTransport dataTransport = GenericTransport.parseFrom(data);			
+											
+				StringBuilder resultText = new StringBuilder(); 
+		    DummyMessage dummy;
+		    if(dataTransport.hasByteData()
+		        && dataTransport.getTypeName().equals("DummyMessage"))
+		    {
+		      try
+		      {
+		        dummy = DummyMessage.parseFrom(dataTransport.getByteData());
+		        resultText.append("Encoded Data:\n");
+		        resultText.append(result.getMsg());
+		        resultText.append(" \n\nData Msg: ");
+		        resultText.append(dummy.getMsg());
+		      }
+		      catch( InvalidProtocolBufferException e )
+		      { resultText.append("Error parsing Message"); }
+		    }
+								
+				return resultText.toString();
 			}
 			catch (IOException e) 
-			{  System.out.println(e.getMessage());  }		
-			return null;
+			{  System.out.println(e.getMessage());  }	
+			catch(NullPointerException n)
+			{ }
+			
+			return new String("Error in transmit");
 		}
 		public void onPostExecute(String result)
 		{

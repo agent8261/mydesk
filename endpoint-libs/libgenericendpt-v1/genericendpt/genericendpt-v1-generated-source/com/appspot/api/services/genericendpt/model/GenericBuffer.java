@@ -13,13 +13,13 @@
  * Warning! This file is generated. Modify at your own risk.
  */
 
-package com.appspot.api.services.mydeskbackend.model;
+package com.appspot.api.services.genericendpt.model;
 
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.json.GenericJson;
 
 /**
- * Model definition for Lexicon.
+ * Model definition for GenericBuffer.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the . For a detailed explanation see:
@@ -28,34 +28,34 @@ import com.google.api.client.json.GenericJson;
  *
  * @author Google, Inc.
  */
-public final class Lexicon extends GenericJson {
+public final class GenericBuffer extends GenericJson {
 
   /**
    * The value may be {@code null}.
    */
   @com.google.api.client.util.Key
-  private String pirateText;
+  private String msg;
 
   /**
    * The value may be {@code null}.
    */
   @com.google.api.client.util.Key
-  private String engText;
+  private String key;
 
   /**
 
    * The value returned may be {@code null}.
    */
-  public String getPirateText() {
-    return pirateText;
+  public String getMsg() {
+    return msg;
   }
 
   /**
 
    * The value set may be {@code null}.
    */
-  public Lexicon setPirateText(String pirateText) {
-    this.pirateText = pirateText;
+  public GenericBuffer setMsg(String msg) {
+    this.msg = msg;
     return this;
   }
 
@@ -63,16 +63,16 @@ public final class Lexicon extends GenericJson {
 
    * The value returned may be {@code null}.
    */
-  public String getEngText() {
-    return engText;
+  public String getKey() {
+    return key;
   }
 
   /**
 
    * The value set may be {@code null}.
    */
-  public Lexicon setEngText(String engText) {
-    this.engText = engText;
+  public GenericBuffer setKey(String key) {
+    this.key = key;
     return this;
   }
 
@@ -82,9 +82,9 @@ public final class Lexicon extends GenericJson {
    * Sets the HTTP headers returned with the server response, or <code>null</code>.
    *
    * This member should only be non-null if this object was the top level element of a response. For
-   * example, a request that returns a single {@link Lexicon} would include the response headers,
-   * while a request which returns an array of {@link Lexicon}, would have a non-null response
-   * header in the enclosing object only.
+   * example, a request that returns a single {@link GenericBuffer} would include the response
+   * headers, while a request which returns an array of {@link GenericBuffer}, would have a non-null
+   * response header in the enclosing object only.
    */
   public void setResponseHeaders(HttpHeaders responseHeaders) {
     this.responseHeaders = responseHeaders;
